@@ -73,10 +73,10 @@ class ManagerFactory extends Manager implements EventsAwareInterface
      */
     public function __construct(
         array $config = [],
-        Security $security = null,
-        SessionManagerInterface $session = null,
-        Cookies $cookies = null,
-        Request $request = null,
+        ?Security $security = null,
+        ?SessionManagerInterface $session = null,
+        ?Cookies $cookies = null,
+        ?Request $request = null,
         ?EventsManagerInterface $eventsManager = null
     ) {
         $this->config = $config;
@@ -170,7 +170,7 @@ class ManagerFactory extends Manager implements EventsAwareInterface
      * @param string|null $provider
      * @return mixed|AdapterInterface|void
      */
-    public function getAdapterProvider(string $provider = null)
+    public function getAdapterProvider(?string $provider = null)
     {
         $configProvider = $this->config['providers'][$provider];
 
